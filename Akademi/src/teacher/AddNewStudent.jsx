@@ -33,22 +33,22 @@ const AddNewStudent = () => {
             let formData = new FormData();
             formData.append('avatar', selectedImage);
             const { studentName, email, password, ...updateValues } = values;            
-            await axios.post("http://localhost:8080/students/register", {
+            await axios.post("https://akademibe.onrender.com/students/register", {
                 studentName,
                 email,
                 password,
             });
 
-            await axios.put("http://localhost:8080/students/update-student", { ...updateValues, email });
+            await axios.put("https://akademibe.onrender.com/students/update-student", { ...updateValues, email });
 
-            await axios.put('http://localhost:8080/students/update-student-avatar?email=' + values.email, formData);
-            let data = await axios.get("http://localhost:8080/students");
+            await axios.put('https://akademibe.onrender.com/students/update-student-avatar?email=' + values.email, formData);
+            let data = await axios.get("https://akademibe.onrender.com/students");
             const student = data.data.find(student => student.email === values.email);
             const timelineContent = `Teacher ${user.teacherID} has added new student ${student.studentID} - ${values.studentName}`;
 
-            await axios.post("http://localhost:8080/marks", { studentID: student.studentID });
+            await axios.post("https://akademibe.onrender.com/marks", { studentID: student.studentID });
 
-            await axios.post("http://localhost:8080/timeline", {
+            await axios.post("https://akademibe.onrender.com/timeline", {
                 content: timelineContent,
                 date: new Date().toISOString(),
                 teacherID: user.teacherID,

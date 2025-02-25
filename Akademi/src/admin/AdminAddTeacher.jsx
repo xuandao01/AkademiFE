@@ -27,7 +27,7 @@ const AdminAddTeacher = () => {
     const handleSubmit = async (values) => {
         try {
             values.avatar = selectedImage.name;
-            let data = await axios.get("http://localhost:8080/students");
+            let data = await axios.get("https://akademibe.onrender.com/students");
             
             const emailExists = data.data.some(student => student.email === values.email);
     
@@ -36,14 +36,14 @@ const AdminAddTeacher = () => {
                 return;
             }
     
-            await axios.put("http://localhost:8080/students/update-student", values);
+            await axios.put("https://akademibe.onrender.com/students/update-student", values);
     
             const student = data.data.find(student => student.email === values.email);
             const timelineContent = `Teacher TC001 has updated the information of new student ${student.studentID} - ${values.studentName}`;
 
-            await axios.post("http://localhost:8080/marks", {studentID: student.studentID});
+            await axios.post("https://akademibe.onrender.com/marks", {studentID: student.studentID});
             
-            await axios.post("http://localhost:8080/timeline", {
+            await axios.post("https://akademibe.onrender.com/timeline", {
                 content: timelineContent,
                 date: new Date().toISOString(),
                 teacherID: "TC001",

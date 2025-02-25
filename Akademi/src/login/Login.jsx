@@ -13,7 +13,7 @@ const Login = () => {
   const onFinish = async (values) => {
     try {
       setIsLoading(true);
-      const result = await axios.post(`http://localhost:8080/${role}/login`, values);
+      const result = await axios.post(`https://akademibe.onrender.com/${role}/login`, values);
       setIsLoading(false);
       axios.defaults.headers.common['Authorization'] = 'Bearer ' + result.data.accessToken;
       window.localStorage.setItem('user', JSON.stringify(result.data));

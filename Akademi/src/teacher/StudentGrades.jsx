@@ -17,8 +17,8 @@ const StudentGrades = () => {
             setUser(storedUser);
 
             try {
-                const studentsData = await axios.get('http://localhost:8080/students');
-                const marksData = await axios.get('http://localhost:8080/marks');
+                const studentsData = await axios.get('https://akademibe.onrender.com/students');
+                const marksData = await axios.get('https://akademibe.onrender.com/marks');
                 
                 const data = studentsData.data.map(student => {
                     const studentMarks = marksData.data.find(mark => mark.studentID === student.studentID);
@@ -127,11 +127,11 @@ const StudentGrades = () => {
         try {
             const user = JSON.parse(localStorage.getItem('user'));
 
-            await axios.put(`http://localhost:8080/marks/update-mark/${editingStudent.studentID}`, editingStudent);
+            await axios.put(`https://akademibe.onrender.com/marks/update-mark/${editingStudent.studentID}`, editingStudent);
             
             const timelineContent = `Teacher ${user.teacherID} has edited mark of student ${editingStudent.studentID} - ${editingStudent.studentName}`;
 
-            await axios.post("http://localhost:8080/timeline", {
+            await axios.post("https://akademibe.onrender.com/timeline", {
                 content: timelineContent,
                 date: new Date().toISOString(),
                 teacherID: user.teacherID,

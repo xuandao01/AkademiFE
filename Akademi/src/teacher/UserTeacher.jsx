@@ -28,12 +28,12 @@ const UserTeacher = () => {
             if (selectedImage) {
                 let formData = new FormData();
                 formData.append('avatar', selectedImage);
-                await axios.put('http://localhost:8080/teachers/up-avatar?email=' + values.email, formData);
+                await axios.put('https://akademibe.onrender.com/teachers/up-avatar?email=' + values.email, formData);
             }
 
             const { studentName, email, password, ...updateValues } = values;
 
-            await axios.put("http://localhost:8080/teachers/update-teacher", { ...updateValues, email });
+            await axios.put("https://akademibe.onrender.com/teachers/update-teacher", { ...updateValues, email });
 
             const updatedUser = {
                 ...JSON.parse(localStorage.getItem('user')),

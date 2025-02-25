@@ -54,7 +54,7 @@ const Dashboard = () => {
         let userData = JSON.parse(localStorage.getItem("user"));
         if (userData) {
             let reference_id = userData.role.toLowerCase() == 'teacher' ? userData.teacherId : userData.studentId;
-            fetch(`http://localhost:8080/events?data_type=${userData.role.toLowerCase()}&reference_id=${reference_id}`).then(res => {
+            fetch(`https://akademibe.onrender.com/events?data_type=${userData.role.toLowerCase()}&reference_id=${reference_id}`).then(res => {
                 res.json().then(data => {
                     const groupedObject = data.reduce((acc, item) => {
                         if (!acc[item.date]) {
@@ -146,7 +146,7 @@ const Dashboard = () => {
             content: eventContent,
             reference_id: userData.role.toLowerCase() == 'teacher' ? userData.teacherId : userData.studentId
         }
-        await axios.post('http://localhost:8080/events', payload)
+        await axios.post('https://akademibe.onrender.com/events', payload)
         openNotification('topRight', 'Success', 'Add event success', 'success');
         getEvent();
         setIsShow(false);

@@ -26,7 +26,7 @@ const StudentsManagement = () => {
     useEffect(() => {
         const fetchStudents = async () => {
             try {
-                const response = await axios.get("http://localhost:8080/students");
+                const response = await axios.get("https://akademibe.onrender.com/students");
                 setStudents(response.data);
             } catch (error) {
                 console.error("Error fetching students:", error);
@@ -164,7 +164,7 @@ const StudentsManagement = () => {
     };
 
     const callApiContact = async (record) => {
-        let data = await axios.get("http://localhost:8080/students");
+        let data = await axios.get("https://akademibe.onrender.com/students");
         const student = data.data.find(student => student.studentID === record.studentID);
         setContact({
             phone: student.phone,
@@ -187,14 +187,14 @@ const StudentsManagement = () => {
 
     const onDelStudent = async (record) => {
         try {
-            await axios.delete(`http://localhost:8080/students/delete-student/${record.studentID}`);
+            await axios.delete(`https://akademibe.onrender.com/students/delete-student/${record.studentID}`);
             setRefreshData(prev => !prev);
         } catch (error) {
             console.error("Error deleting student:", error);
         }
         const timelineContent = `Teacher TC001 has deleted student ${record.studentID} - ${record.studentName}`;
 
-        await axios.post("http://localhost:8080/timeline", {
+        await axios.post("https://akademibe.onrender.com/timeline", {
             content: timelineContent,
             date: new Date().toISOString(),
             teacherID: "TC001",
@@ -204,7 +204,7 @@ const StudentsManagement = () => {
 
     const handleSave = async () => {
         try {
-            await axios.put(`http://localhost:8080/students/update-student/${editingStudent.studentID}`, editingStudent);
+            await axios.put(`https://akademibe.onrender.com/students/update-student/${editingStudent.studentID}`, editingStudent);
             setIsEditing(false);
             setRefreshData(prev => !prev);
 
@@ -213,7 +213,7 @@ const StudentsManagement = () => {
         }
         const timelineContent = `Teacher TC001 has edited student ${editingStudent.studentID} - ${editingStudent.studentName}`;
 
-        await axios.post("http://localhost:8080/timeline", {
+        await axios.post("https://akademibe.onrender.com/timeline", {
             content: timelineContent,
             date: new Date().toISOString(),
             teacherID: "TC001",

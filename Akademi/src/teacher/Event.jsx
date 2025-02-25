@@ -21,7 +21,7 @@ const Event = () => {
     useEffect(() => {
         const fetchEvents = async () => {
             try {
-                const response = await axios.get('http://localhost:8080/notifications');
+                const response = await axios.get('https://akademibe.onrender.com/notifications');
                 const data = response.data;
                 const formattedEvents = {};
                 data.forEach(event => {
@@ -109,10 +109,10 @@ const Event = () => {
         };
 
         try {
-            const response = await axios.post('http://localhost:8080/notifications', event);
+            const response = await axios.post('https://akademibe.onrender.com/notifications', event);
             const timelineContent = `Teacher ${user.teacherID} added an event to grade ${values.type}'s dashboard`;
             
-            await axios.post("http://localhost:8080/timeline", {
+            await axios.post("https://akademibe.onrender.com/timeline", {
                 content: timelineContent,
                 date: new Date().toISOString(),
                 teacherID: user.teacherID,

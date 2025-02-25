@@ -29,7 +29,7 @@ const groupTimelineItemsByDate = (items) => {
 };
 
 const fetchTimelineItems = async () => {
-    const response = await axios.get("http://localhost:8080/timeline");
+    const response = await axios.get("https://akademibe.onrender.com/timeline");
     return response.data; 
 };
 
