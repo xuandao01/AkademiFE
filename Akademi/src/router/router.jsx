@@ -26,7 +26,6 @@ const publicRouter = [
 ];
 
 const privateRouter = {
-  // Lâm - admin
   admin: [
     {
       path: "/admin",
@@ -50,7 +49,6 @@ const privateRouter = {
     },
   ],
 
-  // Đức - teacher
   teacher: [
     { path: "/u/dashboard", component: <Dashboard /> },
     { path: "/u/event", component: <Event /> },
@@ -60,6 +58,28 @@ const privateRouter = {
     { path: "/u/grades", component: <StudentGrades /> },
     { path: "/u/userTeacher", component: <UserTeacher /> },
   ],
+
+  student: [
+    { path: "/u/dashboard", component: <Dashboard /> },
+    // { path: "/u/event", component: <Event /> },
+    // { path: "/u/students", component: <StudentsManagement /> },
+    // { path: "/u/students/add", component: <AddNewStudent /> },
+    { path: "/u/latest-activity", component: <TeacherTimeline /> },
+    { path: "/u/grades", component: <StudentGrades /> },
+    { path: "/u/userTeacher", component: <UserTeacher /> },
+  ],
+
+  // student: [
+  //     {
+  //       path: '/student', component: <StudentPersonalInfo />
+  //     },
+  //     {
+  //       path: '/student/academic', component: <StudentAcademic />
+  //     },
+  //     {
+  //       path: '/student/schedule', component: <StudentSchedule />
+  //     }
+  // ],
   // Quang - student
   // {
   //     path: '/student', component: <StudentPersonalInfo />

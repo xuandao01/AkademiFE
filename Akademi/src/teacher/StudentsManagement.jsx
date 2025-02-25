@@ -143,7 +143,7 @@ const StudentsManagement = () => {
         },
     ];
 
-    const itemsTab = user.grades.map((grade, index) => ({
+    const itemsTab = user.grades?.map((grade, index) => ({
         key: (index + 1).toString(),
         label: grade,
         children: (
@@ -242,7 +242,7 @@ const StudentsManagement = () => {
                 </div>
             </Row>
             <Row style={{ marginTop: 40, backgroundColor: 'white', padding: "10px 20px", borderTopRightRadius: 20, borderTopLeftRadius: 20 }}>
-                <Tabs defaultActiveKey="1" items={itemsTab} />
+                <Tabs style={{width: '100%'}} defaultActiveKey="1" items={itemsTab} />
             </Row>
 
             <Modal

@@ -8,15 +8,19 @@ import { MdSchool } from 'react-icons/md';
 const Login = () => {
   const [form] = Form.useForm();
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
 
   const onFinish = async (values) => {
     try {
+      setIsLoading(true);
       const result = await axios.post(`http://localhost:8080/${role}/login`, values);
+      setIsLoading(false);
       axios.defaults.headers.common['Authorization'] = 'Bearer ' + result.data.accessToken;
       window.localStorage.setItem('user', JSON.stringify(result.data));
       window.localStorage.setItem('authenticated', 'true');
       navigate('/u/dashboard');
     } catch (error) {
+      setIsLoading(false);
       form.setFields([
         {
           name: 'email',
@@ -27,7 +31,7 @@ const Login = () => {
           errors: ['Email or Password is incorrect'],
         },
       ]);
-      setTimeout(() => { form.resetFields() }, 3000)
+      // setTimeout(() => { form.resetFields() }, 3000)
     }
   };
 
@@ -120,7 +124,7 @@ const Login = () => {
                 span: 20,
               }}
             >
-              <Button type="primary" htmlType="submit" style={{ width: 400, backgroundColor: "#4D44B5" }}>
+              <Button type="primary" loading={isLoading} htmlType="submit" style={{ width: 400, backgroundColor: "#4D44B5" }}>
                 Submit
               </Button>
             </Form.Item>

@@ -163,7 +163,7 @@ const Event = () => {
                                 
                                 style={{ width: '100%' }}
                             >
-                                {user.grades.map(grade => (
+                                {user.grades?.map(grade => (
                                 <Option key={grade} value={grade}>
                                     {grade}
                                 </Option>

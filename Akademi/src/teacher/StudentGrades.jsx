@@ -153,7 +153,7 @@ const StudentGrades = () => {
         }));
     };
 
-    const items = user.grades.map(grade => ({
+    const items = user.grades?.map(grade => ({
         key: grade,
         label: grade,
         children: (
@@ -168,7 +168,7 @@ const StudentGrades = () => {
 
     return (
         <div className='tc-grade-all'>
-            <Tabs defaultActiveKey={user.grades[0]} items={items} />
+            <Tabs defaultActiveKey={user.grades ? user.grades[0]: null} items={items} />
             <Modal
                 title={<span style={{ color: "#303972" }}>Edit Student</span>}
                 open={isEditing}

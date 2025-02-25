@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './AdminAddTeacher.css';
 import { Modal, Form, Input, Button } from 'antd';
 import { FaCheckCircle } from 'react-icons/fa';
@@ -36,7 +36,7 @@ const AdminAddTeacher = () => {
                 return;
             }
     
-            let response = await axios.put("http://localhost:8080/students/update-student", values);
+            await axios.put("http://localhost:8080/students/update-student", values);
     
             const student = data.data.find(student => student.email === values.email);
             const timelineContent = `Teacher TC001 has updated the information of new student ${student.studentID} - ${values.studentName}`;
@@ -87,7 +87,7 @@ const AdminAddTeacher = () => {
                 </div>
                 <table className="ad-table-input">
                     <tr>
-                        <td rowSpan={2} style={{ verticalAlign: 'top', width: 180, paddingRight: 40 }}>
+                        <td rowSpan={2} style={{ verticalAlign: 'top', width: 180, paddingRight: 40, paddingTop: 10, paddingLeft: 20 }}>
                             <p>Photo</p>
                             <div className="ad-add-photo" onClick={handleFileSelectClick}>
                                 {imagePreview ? (
@@ -104,7 +104,7 @@ const AdminAddTeacher = () => {
                                 onChange={handleFileChange}
                             />
                         </td>
-                        <td style={{ width: 450, paddingRight: 40 }}>
+                        <td style={{ width: 450, paddingRight: 40, paddingTop: 10 }}>
                             <Form.Item
                                 name="studentName"
                                 label={<p style={{ color: '#303972', fontSize: 18 }}>Teacher Name</p>}

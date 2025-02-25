@@ -91,7 +91,7 @@ const AddNewStudent = () => {
                 </div>
                 <table className="tc-table-input">
                     <tr>
-                        <td rowSpan={2} style={{ verticalAlign: 'top', width: 180, paddingRight: 40 }}>
+                        <td rowSpan={2} style={{ verticalAlign: 'top', width: 180, paddingRight: 40, paddingLeft: 20, paddingTop: 10 }}>
                             <p>Photo</p>
                             <div className="tc-add-photo" onClick={handleFileSelectClick}>
                                 {imagePreview ? (
@@ -108,7 +108,7 @@ const AddNewStudent = () => {
                                 onChange={handleFileChange}
                             />
                         </td>
-                        <td style={{ width: 450, paddingRight: 40 }}>
+                        <td style={{ width: 450, paddingRight: 40, paddingTop: 10 }}>
                             <Form.Item
                                 name="studentName"
                                 label={<p style={{ color: '#303972', fontSize: 18 }}>Student Name</p>}
@@ -117,13 +117,13 @@ const AddNewStudent = () => {
                                 <Input placeholder="Samantha William" />
                             </Form.Item>
                         </td>
-                        <td style={{ width: 400 }}>
+                        <td style={{ width: 400, paddingTop: 10, paddingRight: 20 }}>
                             <Form.Item
                                 name="grade"
                                 label={<p style={{ color: '#303972', fontSize: 18 }}>Grade</p>}
                                 rules={[{ required: true, message: 'Please input grade!' }]}
                             >
-                                <Select placeholder="Select grade" style={{ marginTop: 10 }}>
+                                <Select placeholder="Select grade" style={{ marginTop: 10, height: 45 }}>
                                     <Option value="VII A">VII A</Option>
                                     <Option value="VII B">VII B</Option>
                                     <Option value="VII C">VII C</Option>
@@ -141,7 +141,7 @@ const AddNewStudent = () => {
                                 <Input placeholder="Date of Birth" />
                             </Form.Item>
                         </td>
-                        <td>
+                        <td style={{ paddingRight: 20}}>
                             <Form.Item
                                 name="city"
                                 label={<p style={{ color: '#303972', fontSize: 18 }}>Place of Birth</p>}
@@ -162,7 +162,7 @@ const AddNewStudent = () => {
                                 <Input placeholder="william@gmail.com" />
                             </Form.Item>
                         </td>
-                        <td>
+                        <td style={{ paddingRight: 20}} >
                             <Form.Item
                                 name="password"
                                 label={<p style={{ color: '#303972', fontSize: 18 }}>Password</p>}
@@ -183,7 +183,7 @@ const AddNewStudent = () => {
                                 <Input.TextArea placeholder="Enter your address here" />
                             </Form.Item>
                         </td>
-                        <td>
+                        <td style={{ paddingRight: 20}}>
                             <Form.Item
                                 name="phone"
                                 label={<p style={{ color: '#303972', fontSize: 18 }}>Student Phone</p>}
@@ -200,7 +200,7 @@ const AddNewStudent = () => {
                 </div>
                 <table className="tc-table-input">
                     <tr>
-                        <td style={{ width: 400, paddingRight: 40 }}>
+                        <td style={{ width: 400, paddingRight: 40, paddingTop: 10, paddingLeft: 20 }}>
                             <Form.Item
                                 name="parentName"
                                 label={<p style={{ color: '#303972', fontSize: 18 }}>Parent Name</p>}
@@ -209,7 +209,7 @@ const AddNewStudent = () => {
                                 <Input placeholder="Lili William" />
                             </Form.Item>
                         </td>
-                        <td style={{ width: 400 }}>
+                        <td style={{ width: 400, paddingRight: 20 }}>
                             <Form.Item
                                 name="parentPhone"
                                 label={<p style={{ color: '#303972', fontSize: 18 }}>Parent Phone</p>}
@@ -220,7 +220,7 @@ const AddNewStudent = () => {
                         </td>
                     </tr>
                     <tr>
-                        <td style={{ paddingRight: 40 }}>
+                        <td style={{ paddingRight: 40, paddingLeft: 20 }}>
                             <Form.Item
                                 name="parentEmail"
                                 label={<p style={{ color: '#303972', fontSize: 18 }}>Parent Email</p>}

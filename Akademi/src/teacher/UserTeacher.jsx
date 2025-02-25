@@ -81,7 +81,7 @@ const UserTeacher = () => {
                 </div>
                 <table className="tc-table-input">
                     <tr>
-                        <td rowSpan={2} style={{ verticalAlign: 'top', width: 180, paddingRight: 40 }}>
+                        <td rowSpan={2} style={{ verticalAlign: 'top', width: 180, paddingRight: 40, paddingTop: 10, paddingLeft: 20 }}>
                             <p>Photo</p>
                             <div className="tc-add-photo" onClick={handleFileSelectClick}>
                                 {imagePreview ? (
@@ -98,7 +98,7 @@ const UserTeacher = () => {
                                 onChange={handleFileChange}
                             />
                         </td>
-                        <td style={{ width: 450, paddingRight: 40 }}>
+                        <td style={{ width: 450, paddingRight: 40, paddingTop: 10 }}>
                             <Form.Item
                                 name="teacherName"
                                 label={<p style={{ color: '#303972', fontSize: 18 }}>Name</p>}
@@ -107,7 +107,7 @@ const UserTeacher = () => {
                                 <Input placeholder="Samantha William" />
                             </Form.Item>
                         </td>
-                        <td style={{ width: 400 }}>
+                        <td style={{ width: 400, paddingTop: 10, paddingRight: 20 }}>
                             <Form.Item
                                 name="teacherID"
                                 label={<p style={{ color: '#303972', fontSize: 18 }}>Teacher ID</p>}
@@ -127,7 +127,7 @@ const UserTeacher = () => {
                                 <Input placeholder="Date of Birth" />
                             </Form.Item>
                         </td>
-                        <td>
+                        <td style={{paddingRight: 20}}>
                             <Form.Item
                                 name="grade"
                                 label={<p style={{ color: '#303972', fontSize: 18 }}>Grade</p>}
@@ -148,7 +148,7 @@ const UserTeacher = () => {
                                 <Input disabled />
                             </Form.Item>
                         </td>
-                        <td>
+                        <td style={{paddingRight: 20}}>
                             <Form.Item
                                 name="subject"
                                 label={<p style={{ color: '#303972', fontSize: 18 }}>Subject</p>}
@@ -169,7 +169,7 @@ const UserTeacher = () => {
                                 <Input.TextArea placeholder="Enter your address here" />
                             </Form.Item>
                         </td>
-                        <td>
+                        <td style={{paddingRight: 20}}>
                             <Form.Item
                                 name="phoneNumber"
                                 label={<p style={{ color: '#303972', fontSize: 18 }}>Phone Number</p>}

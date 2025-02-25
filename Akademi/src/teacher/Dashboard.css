@@ -1,0 +1,68 @@
+.add-event{
+    margin: 6px 4px;
+}
+
+.add-event-popup{
+    height: 100vh;
+    width: 100vw;
+    background-color: #111111CC;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-title{
+    border-bottom: solid 1px #111111AA;
+}
+
+
+.popup-center{
+    height: 300px;
+    width: 400px;
+    background-color: #fff;
+    border-radius: 8px;
+    position: relative;
+}
+
+.popup-content{
+    padding: 12px 20px;
+    margin-left: 24px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+}
+
+.color-tag{
+    position: absolute;
+    top: 28px;
+    border-radius: 50%;
+    left: -6px;
+}
+
+.popup-row{
+    width: 100%;
+    display: flex;
+    column-gap: 24px;
+}
+
+.popup-row .ant-picker{
+    width: 100%;
+}
+
+.event-name{
+    width: 100%;
+}
+
+.event-name-inp{
+    width: 100%;
+    height: 36px;
+    font-size: 20px;
+    border: unset;
+    outline: unset;
+    border-bottom: solid 1px #111111CC;
+}

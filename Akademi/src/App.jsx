@@ -3,6 +3,7 @@ import { publicRouter, privateRouter } from "./router/router.jsx"
 import React from "react";
 import "./App.css";
 import LayoutTeacher from "./teacher/LayoutTeacher.jsx";
+import LayoutStudent from "./teacher/LayoutStudent.jsx";
 import Layout from "./layout/Layout.jsx"
 
 function App() {
@@ -25,6 +26,14 @@ function App() {
             ))}
           </Route>
         )}
+
+        {user?.role === 'Student' && (
+          <Route path="/u" element={<LayoutStudent />}>
+            {privateRouter.student.map((route, index) => (
+              <Route path={route.path} element={route.component} key={index} />
+            ))}
+          </Route>
+        )}  
 
         {user?.role === 'Admin' && (
           <Route path="/admin" element={<Layout/>}>

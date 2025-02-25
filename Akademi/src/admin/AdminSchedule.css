@@ -113,9 +113,9 @@ th {
 }
 
 .ant-badge-status-text {
-    color: white !important;
+    color: #555 !important;
     font-weight: 600;
-    font-size: 15px !important;
+    /* font-size: 15px !important; */
 }
 
 .ant-picker-calendar.ant-picker-calendar-full .ant-picker-cell-selected .ant-picker-calendar-date .ant-picker-calendar-date-value {
